@@ -23,7 +23,7 @@ end
 daemon.on_delete do |status_id, user_id|
   tweets.remove(status_id)
 end
-daemon.track('#QtDD2014') do |status|
+daemon.track('#QtDD14') do |status|
 
   if !status.text.start_with?('RT @')
     tweet = {
