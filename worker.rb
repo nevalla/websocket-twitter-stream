@@ -6,10 +6,10 @@ require 'qtc-sdk'
 
 
 TweetStream.configure do |config|
-  config.consumer_key       = '87iiFtaopgn8yA0ejbRm3Q'
-  config.consumer_secret    = 'IJJ3kYHbbRts1x1Ipr5OGpQvzdT9WzliGOkpNNkGUk'
-  config.oauth_token        = '133188022-i8tpj4Igq4iUJJGJwX4oKr1VibUPlpRRs0PQevF3'
-  config.oauth_token_secret = 'SpVVCk0wexi5DDPnqFTPrbvkvABCbKPuOzeR3wOE'
+  config.consumer_key       = 'MCCmRkvHUVkmUVJiOUQWkhdSw'
+  config.consumer_secret    = 'QSTflEmmQLjRJKotKGKe2CRA0FHt6tW9qDqDzwqr17lF9MkAQg'
+  config.oauth_token        = '133188022-xZQgDbJxlxGHQQ7H764L5PGAsICyXrJOrY6VCtiv'
+  config.oauth_token_secret = 'QUcoPIxG1i6IUrSxlp9iE6CKyYp5LUnxATIxPlUroYlfQ'
   config.auth_method        = :oauth
 end
 
