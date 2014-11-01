@@ -5,4 +5,4 @@ gem 'sinatra'
 gem 'tweetstream'
 gem 'puma'
 gem 'rails_12factor', group: :production
-gem 'qtc-sdk', git: 'https://github.com/jakolehm/qtc-sdk-ruby.git'
+gem 'qtc-sdk', git: 'https://github.com/nevalla/qtc-sdk-ruby.git'
