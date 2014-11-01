@@ -7,8 +7,8 @@ require 'qtc-sdk'
 set :port, ENV['PORT']
 
 get '/tweets/:hashtag' do
-  #eds = Qtc::Eds::Client.new('53e0d5335a3d8b6580002abe') #test
-  eds = Qtc::Eds::Client.new('544d36b6e5bde5522202172d') #production
+
+  eds = Qtc::Eds::Client.new(ENV['EDS_BACKEND_ID'])
   tweets = eds.collection('tweets')
   query = {
     :q => {
@@ -21,4 +21,11 @@ get '/tweets/:hashtag' do
   content_type :json,'charset' => 'utf-8'
   result = tweets.find(query)
   result.to_json
+end
+
+get '/websocket_uri' do
+  mws = Qtc::Mws::Client.new(ENV['MWS_GATEWAY_ID'], {access_token: ENV['MWS_SECURITY_TOKEN']})
+  socket = mws.create_socket(["QtDD14"])
+  content_type :json,'charset' => 'utf-8'
+  socket.to_json
 end

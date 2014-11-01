@@ -1,0 +1,5 @@
+vendor/
+.bundle
+.profile.d
+temp/
+.release
