@@ -6,10 +6,10 @@ require 'qtc-sdk'
 
 
 TweetStream.configure do |config|
-  config.consumer_key       = ENV['CONSUMER_KEY'] #'MCCmRkvHUVkmUVJiOUQWkhdSw'
-  config.consumer_secret    = ENV['CONSUMER_SECRET'] #'QSTflEmmQLjRJKotKGKe2CRA0FHt6tW9qDqDzwqr17lF9MkAQg'
-  config.oauth_token        = ENV['OAUTH_TOKEN'] #'133188022-xZQgDbJxlxGHQQ7H764L5PGAsICyXrJOrY6VCtiv'
-  config.oauth_token_secret = ENV['OAUTH_SECRET'] #'QUcoPIxG1i6IUrSxlp9iE6CKyYp5LUnxATIxPlUroYlfQ'
+  config.consumer_key       = ENV['CONSUMER_KEY']
+  config.consumer_secret    = ENV['CONSUMER_SECRET']
+  config.oauth_token        = ENV['OAUTH_TOKEN']
+  config.oauth_token_secret = ENV['OAUTH_SECRET']
   config.auth_method        = :oauth
 end
 
@@ -32,7 +32,7 @@ daemon.track('#QtDD14') do |status|
       hashtags: status.hashtags.map{|h| h.text.downcase }
     }
 
-    #tweets.insert(tweet)
+    tweets.insert(tweet)
     mws.send_message(tweet.to_json, {sockets: nil, tags: ['QtDD14']})
   end
 
