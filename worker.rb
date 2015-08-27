@@ -4,6 +4,7 @@ require 'bundler/setup'
 require 'tweetstream'
 require 'qtc-sdk'
 
+HASHTAG = "#QtDD14"
 
 TweetStream.configure do |config|
   config.consumer_key       = ENV['CONSUMER_KEY']
@@ -19,7 +20,7 @@ tweets = eds.collection('tweets')
 
 daemon = TweetStream::Daemon.new('tracker', :multiple => true, :no_pidfiles => true)
 
-daemon.track('#QtDD14') do |status|
+daemon.track(HASHTAG) do |status|
 
   if !status.text.start_with?('RT @')
     tweet = {
@@ -33,7 +34,7 @@ daemon.track('#QtDD14') do |status|
     }
 
     tweets.insert(tweet)
-    mws.send_message(tweet.to_json, {sockets: nil, tags: ['QtDD14']})
+    mws.send_message(tweet.to_json, {sockets: nil, tags: [HASHTAG]})
   end
 
 end
